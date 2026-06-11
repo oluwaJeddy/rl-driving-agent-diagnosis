@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+data/raw/
+results/checkpoints/
+*.zip
+.DS_Store
