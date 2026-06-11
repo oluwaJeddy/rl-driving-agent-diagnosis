@@ -1,3 +1,8 @@
+# pygame-ce must be installed first (pre-built cp314 wheels; pygame has none for Python 3.14):
+#   pip install pygame-ce
+# Then install the rest:
+#   pip install highway-env --no-deps && pip install -r requirements.txt
+pygame-ce>=2.5.0
 stable-baselines3[extra]>=2.3.0
 highway-env>=1.9.1
 gymnasium>=0.29.1
@@ -8,3 +13,4 @@ numpy>=1.26.0
 torch>=2.2.0
 tensorboard>=2.16.0
 shimmy>=1.3.0
+scipy>=1.13.0

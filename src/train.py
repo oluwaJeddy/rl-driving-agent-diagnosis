@@ -67,7 +67,7 @@ def make_env(env_id: str, config: dict | None = None):
 
 
 def build_model(vec_env, args: argparse.Namespace) -> PPO:
-    policy_kwargs = dict(net_arch=[dict(pi=[256, 256], vf=[256, 256])])
+    policy_kwargs = dict(net_arch=dict(pi=[256, 256], vf=[256, 256]))
     return PPO(
         policy="MlpPolicy",
         env=vec_env,

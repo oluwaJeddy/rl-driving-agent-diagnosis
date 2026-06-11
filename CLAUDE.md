@@ -64,7 +64,26 @@ data/raw/       – Raw scenario data (gitignored)
 
 ### Probed scenarios (`evaluate.SCENARIOS`)
 
-`baseline`, `high_density`, `highway_merging`, `cut_in`, `low_speed`, `sparse` — each overrides `BASE_CONFIG` keys passed to `gym.make`.
+10 scenarios across 5 nuPlan categories (2 variants each). Run a whole category with `--scenarios lane_change`.
+
+| nuPlan category | Scenario keys | env |
+|---|---|---|
+| `lane_change` | `lane_change_simple`, `lane_change_blocked` | highway-v0 |
+| `cut_in` | `cut_in_aggressive`, `cut_in_high_speed` | highway-v0 |
+| `emergency_braking` | `emergency_braking_dense`, `emergency_braking_lead_stop` | highway-v0 |
+| `junction_crossing` | `junction_crossing_unprotected`, `junction_crossing_busy` | intersection-v0 ¹ |
+| `pedestrian_interaction` | `pedestrian_static`, `pedestrian_crossing` | highway-v0 ² |
+
+¹ Cross-domain robustness test: model trained on highway-v0, absolute-coord obs = OOD.  
+² `PedestrianProxyWrapper` injects a near-stationary `IDMVehicle` (0.5–2 m/s) ahead of ego; highway-env has no native pedestrian model.
+
+### Scenario-aware failure classification
+
+`evaluate._classify_step()` wraps the generic `taxonomy.classify_from_info()` and refines events by nuPlan context:
+- Cut-in collision → `PREDICTION/failed_cut_in_anticipation` (not generic `PLANNING/collision`)
+- Emergency braking collision → `PLANNING/late_braking`
+- Junction collision → `INTERACTION/right_of_way_violation`
+- Pedestrian proxy collision → `PERCEPTION/pedestrian_proxy_collision`
 
 ## Outputs
 
