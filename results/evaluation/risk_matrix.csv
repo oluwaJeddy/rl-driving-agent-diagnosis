@@ -1,0 +1,17 @@
+Scenario,Failure Category,Severity,Severity (S),Likelihood,Likelihood (L),Risk Score,Risk Band
+cut_in/cut_in_aggressive,Planning,SERIOUS,3,REMOTE,2,6,ALARP
+cut_in/cut_in_high_speed,Planning,SERIOUS,3,REMOTE,2,6,ALARP
+emergency_braking/emergency_braking_dense,Prediction,SERIOUS,3,IMPROBABLE,1,3,Acceptable
+emergency_braking/emergency_braking_dense,Planning,SERIOUS,3,FREQUENT,4,12,Unacceptable
+emergency_braking/emergency_braking_lead_stop,Planning,SERIOUS,3,REMOTE,2,6,ALARP
+junction_crossing/junction_crossing_busy,Robustness,SERIOUS,3,FREQUENT,4,12,Unacceptable
+junction_crossing/junction_crossing_unprotected,Robustness,SERIOUS,3,OCCASIONAL,3,9,Unacceptable
+lane_change/lane_change_blocked,Prediction,SERIOUS,3,IMPROBABLE,1,3,Acceptable
+lane_change/lane_change_blocked,Interaction,MINOR,2,IMPROBABLE,1,2,Acceptable
+lane_change/lane_change_simple,Planning,SERIOUS,3,OCCASIONAL,3,9,Unacceptable
+lane_change/lane_change_simple,Alignment,MINOR,2,FREQUENT,4,8,ALARP
+lane_change/lane_change_simple,Interaction,MINOR,2,REMOTE,2,4,ALARP
+pedestrian_interaction/pedestrian_crossing,Prediction,SERIOUS,3,FREQUENT,4,12,Unacceptable
+pedestrian_interaction/pedestrian_crossing,Planning,SERIOUS,3,OCCASIONAL,3,9,Unacceptable
+pedestrian_interaction/pedestrian_static,Prediction,SERIOUS,3,FREQUENT,4,12,Unacceptable
+pedestrian_interaction/pedestrian_static,Planning,SERIOUS,3,OCCASIONAL,3,9,Unacceptable

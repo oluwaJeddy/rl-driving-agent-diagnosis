@@ -1,0 +1,26 @@
+{
+  "scenario": "pedestrian_crossing",
+  "episode_id": 0,
+  "step": 1,
+  "category": "Planning",
+  "subcategory": "collision",
+  "description": "Crash at step 1 (speed=18.4 m/s) \u2013 hazard was visible but no specific evidence pattern matched; defaulting to Planning.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": null,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": -0.28993040323257446,
+      "ttc": 5.303934410099836,
+      "hazard_visible": true,
+      "hazard_distance": 20.94919701522838,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false
+    }
+  ]
+}

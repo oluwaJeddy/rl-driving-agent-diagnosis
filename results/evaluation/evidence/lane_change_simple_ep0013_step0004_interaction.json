@@ -1,0 +1,60 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 13,
+  "step": 4,
+  "category": "Interaction",
+  "subcategory": "right_of_way_violation",
+  "description": "Crash at step 4 in a multi-agent lane_change scenario with no single hazard ever reaching TTC<2.0s \u2013 consistent with a coordination/right-of-way failure rather than a reactive braking failure.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": 3,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.946594715118408,
+      "ttc": 16.770827944456787,
+      "hazard_visible": true,
+      "hazard_distance": 26.27871036529541,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4944220488427259
+    },
+    {
+      "step": 2,
+      "value_estimate": 5.506758213043213,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 22.475009313488545,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.49535565207932886
+    },
+    {
+      "step": 3,
+      "value_estimate": 4.105159759521484,
+      "ttc": 2.346039242325849,
+      "hazard_visible": true,
+      "hazard_distance": 15.877976626118357,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.49529323452833224
+    },
+    {
+      "step": 4,
+      "value_estimate": 4.930141925811768,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 10.105370488691518,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "scenario": "pedestrian_crossing",
+  "episode_id": 7,
+  "step": 1,
+  "category": "Prediction",
+  "subcategory": "failed_anticipation",
+  "description": "Crash at step 1: hazard first visible at step 1, TTC fell below 2.0s at step 1, but the critic's value estimate dropped never \u2013 agent saw the hazard but didn't anticipate the collision in time.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 1,
+    "value_drop_step": null,
+    "action_deviation_step": 1
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 2.4429965019226074,
+      "ttc": 0.9565217537780794,
+      "hazard_visible": true,
+      "hazard_distance": 21.99999988079071,
+      "action": 2,
+      "baseline_action": 4,
+      "action_deviation": true
+    }
+  ]
+}

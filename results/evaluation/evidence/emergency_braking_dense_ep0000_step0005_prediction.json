@@ -1,0 +1,66 @@
+{
+  "scenario": "emergency_braking_dense",
+  "episode_id": 0,
+  "step": 5,
+  "category": "Prediction",
+  "subcategory": "failed_anticipation",
+  "description": "Crash at step 5: hazard first visible at step 1, TTC fell below 2.0s at step 5, but the critic's value estimate dropped never \u2013 agent saw the hazard but didn't anticipate the collision in time.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 5,
+    "value_drop_step": null,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 2.993311882019043,
+      "ttc": 6.010145034482971,
+      "hazard_visible": true,
+      "hazard_distance": 23.301810026168823,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false
+    },
+    {
+      "step": 2,
+      "value_estimate": 3.9402995109558105,
+      "ttc": 6.295132661183379,
+      "hazard_visible": true,
+      "hazard_distance": 20.052583352323833,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false
+    },
+    {
+      "step": 3,
+      "value_estimate": 3.2772021293640137,
+      "ttc": 2.196492926653808,
+      "hazard_visible": true,
+      "hazard_distance": 14.449502413170409,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false
+    },
+    {
+      "step": 4,
+      "value_estimate": 5.141454219818115,
+      "ttc": 4.824739748576919,
+      "hazard_visible": true,
+      "hazard_distance": 10.462170546093798,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false
+    },
+    {
+      "step": 5,
+      "value_estimate": 4.446397304534912,
+      "ttc": 1.2301071093900253,
+      "hazard_visible": true,
+      "hazard_distance": 6.405449695882922,
+      "action": 4,
+      "baseline_action": 4,
+      "action_deviation": false
+    }
+  ]
+}

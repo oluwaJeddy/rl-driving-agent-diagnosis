@@ -1,0 +1,66 @@
+{
+  "scenario": "cut_in_aggressive",
+  "episode_id": 28,
+  "step": 5,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 5: value estimate dropped promptly at step 2 (TTC critical at step 3) but the agent's action deviated from the safe brake baseline from step 3 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 3,
+    "value_drop_step": 2,
+    "action_deviation_step": 3
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.577892303466797,
+      "ttc": 12.913239533393881,
+      "hazard_visible": true,
+      "hazard_distance": 22.35047290426101,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false
+    },
+    {
+      "step": 2,
+      "value_estimate": 3.4791433811187744,
+      "ttc": 5.622053019469067,
+      "hazard_visible": true,
+      "hazard_distance": 20.395505588111952,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false
+    },
+    {
+      "step": 3,
+      "value_estimate": 1.8446110486984253,
+      "ttc": 1.5901981082948364,
+      "hazard_visible": true,
+      "hazard_distance": 14.628967917174233,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true
+    },
+    {
+      "step": 4,
+      "value_estimate": 1.5404729843139648,
+      "ttc": 0.002567993897183283,
+      "hazard_visible": true,
+      "hazard_distance": 4.000258687642851,
+      "action": 2,
+      "baseline_action": 4,
+      "action_deviation": true
+    },
+    {
+      "step": 5,
+      "value_estimate": 3.247021198272705,
+      "ttc": 1.68888788773068,
+      "hazard_visible": true,
+      "hazard_distance": 16.247254217636307,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true
+    }
+  ]
+}

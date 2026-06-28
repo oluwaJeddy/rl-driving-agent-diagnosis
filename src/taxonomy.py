@@ -29,6 +29,33 @@ class FailureCategory(str, Enum):
 
 
 @dataclass
+class StepEvidence:
+    """
+    Behavioral signals recorded at a single environment step, used to ground
+    failure classification in agent behaviour rather than scenario labels.
+    """
+    step: int
+    value_estimate: float
+    ttc: float                          # seconds to collision with nearest hazard; inf if none
+    hazard_visible: bool                # any non-ego obs slot with presence > 0.5
+    hazard_distance: Optional[float]    # metres to nearest visible hazard, None if none visible
+    action: int
+    baseline_action: Optional[int]      # safe-baseline recommendation; None if no constraint
+    action_deviation: bool              # True if baseline required braking and agent didn't
+    speed_reward: float = 0.0          # high_speed_reward component returned by env this step
+
+
+@dataclass
+class EvidenceSummary:
+    """First-occurrence step markers derived from a StepEvidence trace, used
+    directly as the rationale for a classification decision."""
+    hazard_visible_step: Optional[int] = None
+    ttc_critical_step: Optional[int] = None
+    value_drop_step: Optional[int] = None
+    action_deviation_step: Optional[int] = None
+
+
+@dataclass
 class FailureEvent:
     step: int
     category: FailureCategory
@@ -36,6 +63,9 @@ class FailureEvent:
     description: str
     obs_snapshot: Optional[dict] = None
     severity: float = 1.0  # 0–1, overridden by risk_matrix
+    evidence_trace: List[StepEvidence] = field(default_factory=list)
+    evidence_summary: EvidenceSummary = field(default_factory=EvidenceSummary)
+    evidence_path: Optional[str] = None  # set once the trace is persisted to disk
 
 
 @dataclass

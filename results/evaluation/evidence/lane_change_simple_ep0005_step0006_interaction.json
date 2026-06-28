@@ -1,0 +1,82 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 5,
+  "step": 6,
+  "category": "Interaction",
+  "subcategory": "right_of_way_violation",
+  "description": "Crash at step 6 in a multi-agent lane_change scenario with no single hazard ever reaching TTC<2.0s \u2013 consistent with a coordination/right-of-way failure rather than a reactive braking failure.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": 3,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 6.310808181762695,
+      "ttc": 10.493728941835748,
+      "hazard_visible": true,
+      "hazard_distance": 25.751855969429016,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4944220488427259
+    },
+    {
+      "step": 2,
+      "value_estimate": 6.116555690765381,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 23.678327148313524,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.49535565207932886
+    },
+    {
+      "step": 3,
+      "value_estimate": 4.1644368171691895,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 20.61132315665879,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.49529323452833224
+    },
+    {
+      "step": 4,
+      "value_estimate": 5.168430328369141,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 17.376724007565663,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4952973415307163
+    },
+    {
+      "step": 5,
+      "value_estimate": 3.1566948890686035,
+      "ttc": 2.8039550614446744,
+      "hazard_visible": true,
+      "hazard_distance": 13.105550153729949,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4952970778775711
+    },
+    {
+      "step": 6,
+      "value_estimate": 4.443650722503662,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 9.642730745143721,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4952970946774176
+    }
+  ]
+}
