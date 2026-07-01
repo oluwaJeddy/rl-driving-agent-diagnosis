@@ -1,0 +1,11 @@
+Scenario,Failure Category,Severity,Severity (S),Likelihood,Likelihood (L),Risk Score,Risk Band
+lane_change/lane_change_simple,Planning,SERIOUS,3,FREQUENT,4,12,Unacceptable
+lane_change/lane_change_blocked,Planning,SERIOUS,3,REMOTE,2,6,ALARP
+cut_in/cut_in_aggressive,Prediction,SERIOUS,3,OCCASIONAL,3,9,Unacceptable
+cut_in/cut_in_high_speed,Prediction,SERIOUS,3,OCCASIONAL,3,9,Unacceptable
+emergency_braking/emergency_braking_dense,Planning,SERIOUS,3,FREQUENT,4,12,Unacceptable
+emergency_braking/emergency_braking_lead_stop,Planning,SERIOUS,3,OCCASIONAL,3,9,Unacceptable
+junction_crossing/junction_crossing_unprotected,Interaction,MINOR,2,FREQUENT,4,8,ALARP
+junction_crossing/junction_crossing_busy,Interaction,MINOR,2,FREQUENT,4,8,ALARP
+pedestrian_interaction/pedestrian_static,Perception,CATASTROPHIC,4,FREQUENT,4,16,Unacceptable
+pedestrian_interaction/pedestrian_crossing,Perception,CATASTROPHIC,4,FREQUENT,4,16,Unacceptable

@@ -1,0 +1,19 @@
+{
+  "timestamp": "2026-07-01T15:54:59.434257+00:00",
+  "model": "results/checkpoints/ppo_fixed_reward/ppo_fixed_final",
+  "seed": 42,
+  "scenarios": [
+    "lane_change_simple",
+    "lane_change_blocked",
+    "cut_in_aggressive",
+    "cut_in_high_speed",
+    "emergency_braking_dense",
+    "emergency_braking_lead_stop",
+    "junction_crossing_unprotected",
+    "junction_crossing_busy",
+    "pedestrian_static",
+    "pedestrian_crossing"
+  ],
+  "episodes_per_scenario": 30,
+  "deterministic": true
+}
