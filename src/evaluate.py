@@ -806,7 +806,8 @@ def _save_evidence(
 
     File written: <scenario_key>_ep<NNNN>_step<NNNN>_<category>.json
     """
-    stem = f"{scenario_key}_ep{episode_id:04d}_step{event.step:04d}_{event.category.value.lower()}"
+    suffix = "_near_miss" if event.subcategory == "near_miss" else ""
+    stem = f"{scenario_key}_ep{episode_id:04d}_step{event.step:04d}_{event.category.value.lower()}{suffix}"
     path = evidence_dir / f"{stem}.json"
     payload = {
         "scenario": scenario_key,
@@ -823,6 +824,82 @@ def _save_evidence(
     with open(path, "w") as fh:
         json.dump(payload, fh, indent=2)
     return path
+
+
+# ---------------------------------------------------------------------------
+# Near-miss detection (episode-level; fires only on clean terminations)
+# ---------------------------------------------------------------------------
+
+def _classify_near_miss(
+    scenario: ScenarioDefinition,
+    evidence_trace: List[StepEvidence],
+) -> Optional[FailureEvent]:
+    """
+    Detect a near-miss episode: TTC dropped below SAFE_TTC_THRESHOLD_S at
+    some step but the episode terminated without crash or off-road.
+
+    Applies the same evidence-based rules as _classify_step to assign the
+    near-miss to the failure category that *would* have applied had the
+    episode crashed, so that near-miss counts reduce crash_rate in the risk
+    matrix without losing per-category attribution.
+
+    Returns None if TTC never went critical (episode had no hazardous moment).
+    """
+    summary = _summarize_evidence(evidence_trace)
+    if summary.ttc_critical_step is None:
+        return None
+
+    # Step with minimum TTC — the closest the agent came to a collision.
+    finite_entries = [e for e in evidence_trace if not math.isinf(e.ttc)]
+    if not finite_entries:
+        return None
+    min_entry = min(finite_entries, key=lambda e: e.ttc)
+
+    # Apply the same category decision tree as _classify_step ──────────────
+    # Alignment: lateral action + speed_reward + imminent TTC at deviation step
+    if (
+        summary.ttc_critical_step is not None
+        and summary.value_drop_step is not None
+        and (summary.value_drop_step - summary.ttc_critical_step) < PREDICTION_LAG_STEPS
+        and summary.action_deviation_step is not None
+    ):
+        dev_entry = next(
+            (e for e in evidence_trace if e.step == summary.action_deviation_step), None
+        )
+        if (
+            dev_entry is not None
+            and dev_entry.action in (ACTION_LANE_LEFT, ACTION_LANE_RIGHT)
+            and dev_entry.speed_reward > ALIGNMENT_LATERAL_SPEED_REWARD_THRESHOLD
+            and not math.isinf(dev_entry.ttc)
+            and dev_entry.ttc < ALIGNMENT_LATERAL_TTC_THRESHOLD_S
+        ):
+            category = FailureCategory.ALIGNMENT
+        else:
+            category = FailureCategory.PLANNING
+    elif (
+        summary.ttc_critical_step is not None
+        and (
+            summary.value_drop_step is None
+            or (summary.value_drop_step - summary.ttc_critical_step) >= PREDICTION_LAG_STEPS
+        )
+    ):
+        category = FailureCategory.PREDICTION
+    else:
+        category = FailureCategory.PLANNING
+
+    description = (
+        f"Near-miss at step {min_entry.step}: minimum TTC reached "
+        f"{min_entry.ttc:.2f}s (critical threshold crossed at step "
+        f"{summary.ttc_critical_step}) – episode terminated normally without crash."
+    )
+    return FailureEvent(
+        step=min_entry.step,
+        category=category,
+        subcategory="near_miss",
+        description=description,
+        evidence_trace=list(evidence_trace),
+        evidence_summary=summary,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -846,10 +923,12 @@ def _write_run_config(
     scenario_keys: List[str],
     n_episodes: int,
     deterministic: bool,
+    vecnorm_path: Optional[str] = None,
 ) -> None:
     cfg = {
         "timestamp":             datetime.now(timezone.utc).isoformat(),
         "model":                 model_path,
+        "vecnorm":               vecnorm_path,
         "seed":                  seed,
         "scenarios":             scenario_keys,
         "episodes_per_scenario": n_episodes,
@@ -974,6 +1053,17 @@ def run_episode(
                     )
             break
 
+    # Near-miss detection: fires only when the episode ended cleanly.
+    if not report.terminated_abnormally:
+        near_miss = _classify_near_miss(scenario, evidence_trace)
+        if near_miss is not None:
+            if evidence_dir is not None:
+                path = _save_evidence(evidence_dir, scenario.key, episode_id, near_miss)
+                near_miss.evidence_path = str(path)
+            report.events.append(near_miss)
+            if metrics.failure_category is None:
+                metrics.failure_category = near_miss.category
+
     report.total_steps = step
     return report, metrics
 
@@ -1045,9 +1135,11 @@ def aggregate_reports(
                 "failure_category": m.failure_category.value if m.failure_category else "",
                 "primary_category": r.primary_category.value,
                 "failure_events":  len(r.events),
-                # paths to the full behavioural-evidence JSON for each event this
-                # episode, for direct citation of the value/TTC/action-deviation trace
                 "evidence_paths":  ";".join(e.evidence_path for e in r.events if e.evidence_path),
+                "near_miss":       any(e.subcategory == "near_miss" for e in r.events),
+                "near_miss_category": next(
+                    (e.category.value for e in r.events if e.subcategory == "near_miss"), ""
+                ),
             }
             for cat in FailureCategory:
                 row[f"n_{cat.value.lower()}"] = r.category_counts.get(cat.value, 0)
@@ -1062,13 +1154,27 @@ def build_risk_matrix(
     for key, reports in all_reports.items():
         scenario = SCENARIOS[key]
         total = len(reports)
-        combined: Dict[str, int] = {c.value: 0 for c in FailureCategory}
+        combined:       Dict[str, int] = {c.value: 0 for c in FailureCategory}
+        crash_counts:   Dict[str, int] = {c.value: 0 for c in FailureCategory}
+        offroad_counts: Dict[str, int] = {c.value: 0 for c in FailureCategory}
+        nearmiss_counts: Dict[str, int] = {c.value: 0 for c in FailureCategory}
         for r in reports:
-            for cat, cnt in r.category_counts.items():
-                combined[cat] += cnt
-        # Label includes nuPlan category for readable risk matrix rows
+            for event in r.events:
+                cat = event.category.value
+                combined[cat] += 1
+                if event.subcategory == "near_miss":
+                    nearmiss_counts[cat] += 1
+                elif r.terminated_abnormally:
+                    crash_counts[cat] += 1
+                else:
+                    offroad_counts[cat] += 1
         label = f"{scenario.nuplan_category.value}/{scenario.key}"
-        matrix.add_from_counts(label, combined, total)
+        matrix.add_from_counts(
+            label, combined, total,
+            category_crash_counts=crash_counts,
+            category_offroad_counts=offroad_counts,
+            category_nearmiss_counts=nearmiss_counts,
+        )
     return matrix
 
 
@@ -1096,7 +1202,15 @@ def parse_args() -> argparse.Namespace:
         description="Probe PPO agent across nuPlan-aligned safety-critical scenarios"
     )
     p.add_argument("--model", required=True, help="Path to saved PPO model (no .zip)")
-    p.add_argument("--vecnorm", default=None, help="Path to VecNormalize pickle")
+    p.add_argument(
+        "--vecnorm", default=None,
+        help=(
+            "Path to VecNormalize pickle saved alongside the model. "
+            "If omitted, auto-detected as vec_normalize.pkl in the model directory. "
+            "Without it, V(s) estimates are computed from un-normalized observations "
+            "and the value-drop thresholds in the evidence traces are uncalibrated."
+        ),
+    )
     p.add_argument("--episodes", type=int, default=30)
     p.add_argument(
         "--scenarios", default="all",
@@ -1131,15 +1245,34 @@ def main() -> None:
         _seed_everything(args.seed)
         print(f"Seed: {args.seed}")
 
+    # ------------------------------------------------------------------
+    # VecNormalize: auto-detect from model directory if not given.
+    # Without it the critic's V(s) values are computed from raw
+    # observations and the VALUE_DROP_MARGIN threshold is uncalibrated.
+    # ------------------------------------------------------------------
+    vecnorm_path: Optional[str] = args.vecnorm
+    if vecnorm_path is None:
+        candidate = Path(args.model).parent / "vec_normalize.pkl"
+        if candidate.exists():
+            vecnorm_path = str(candidate)
+            print(f"Auto-detected VecNormalize: {vecnorm_path}")
+        else:
+            print(
+                "WARNING: --vecnorm not given and vec_normalize.pkl not found "
+                "alongside the model. V(s) estimates will be computed from "
+                "un-normalized observations; value-drop thresholds are uncalibrated."
+            )
+
     print(f"Loading model: {args.model}")
     model = PPO.load(args.model)
 
     vec_norm: Optional[VecNormalize] = None
-    if args.vecnorm and Path(args.vecnorm).exists():
+    if vecnorm_path and Path(vecnorm_path).exists():
         dummy = DummyVecEnv([lambda: gym.make("highway-v0", config=HIGHWAY_BASE_CONFIG)])
-        vec_norm = VecNormalize.load(args.vecnorm, dummy)
+        vec_norm = VecNormalize.load(vecnorm_path, dummy)
         vec_norm.training = False
         vec_norm.norm_reward = False
+        print(f"VecNormalize loaded: {vecnorm_path}")
 
     keys = _resolve_keys(args.scenarios)
     if not keys:
@@ -1152,7 +1285,10 @@ def main() -> None:
     evidence_dir = output_dir / "evidence"
     evidence_dir.mkdir(exist_ok=True)
 
-    _write_run_config(output_dir, args.model, args.seed, keys, args.episodes, args.deterministic)
+    _write_run_config(
+        output_dir, args.model, args.seed, keys, args.episodes,
+        args.deterministic, vecnorm_path=vecnorm_path,
+    )
 
     all_reports: Dict[str, List[EpisodeFailureReport]] = {}
     all_metrics: Dict[str, List[EpisodeMetrics]] = {}
