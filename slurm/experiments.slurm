@@ -18,7 +18,7 @@
 #SBATCH --array=0-15
 #SBATCH --cpus-per-task=4        # matches N_ENVS=4 in train_experiment.py
 #SBATCH --gres=gpu:1             # V100/A100; remove if submitting to CPU-only queue
-#SBATCH --time=00:45:00          # ~5 min train + ~15 min eval; 45 min is safe
+#SBATCH --time=05:00:00          # ~5 min train + ~15 min eval; 45 min is safe
 #SBATCH --mem=12G
 #SBATCH --output=slurm/logs/%x_%A_%a.out
 #SBATCH --error=slurm/logs/%x_%A_%a.err
