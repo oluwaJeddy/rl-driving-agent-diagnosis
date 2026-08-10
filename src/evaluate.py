@@ -1171,9 +1171,6 @@ def build_risk_matrix(
         label = f"{scenario.nuplan_category.value}/{scenario.key}"
         matrix.add_from_counts(
             label, combined, total,
-            category_crash_counts=crash_counts,
-            category_offroad_counts=offroad_counts,
-            category_nearmiss_counts=nearmiss_counts,
         )
     return matrix
 
