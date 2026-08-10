@@ -1,0 +1,5 @@
+condition,n_seeds,lane_change_simple__crash%,lane_change_simple__Alignment,lane_change_simple__Planning,lane_change_simple__Perception,pedestrian_static__crash%,pedestrian_static__Alignment,pedestrian_static__Planning,pedestrian_static__Perception
+baseline,5,96.0 ± 3.3,2.8 ± 3.8,24.8 ± 4.2,0.0 ± 0.0,97.3 ± 5.3,0.6 ± 1.2,1.8 ± 0.4,0.0 ± 0.0
+full_ablation,5,56.7 ± 37.5,0.2 ± 0.4,18.8 ± 8.4,0.0 ± 0.0,94.7 ± 4.5,1.0 ± 1.5,2.0 ± 0.0,0.0 ± 0.0
+on_road_only,3,68.9 ± 44.0,0.3 ± 0.5,22.3 ± 6.6,0.0 ± 0.0,100.0 ± 0.0,0.0 ± 0.0,2.0 ± 0.0,0.0 ± 0.0
+collision10_only,3,68.9 ± 39.4,0.0 ± 0.0,20.3 ± 7.1,0.0 ± 0.0,100.0 ± 0.0,0.0 ± 0.0,2.0 ± 0.0,0.0 ± 0.0
