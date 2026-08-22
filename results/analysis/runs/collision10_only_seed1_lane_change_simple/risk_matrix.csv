@@ -1,0 +1,2 @@
+Scenario,Failure Category,Severity,Severity (S),Likelihood,Likelihood (L),Risk Score,Risk Band,Mitigation
+lane_change/lane_change_simple,Planning,SERIOUS,3,FREQUENT,4,12,Unacceptable,Add safety constraint layer or action shield

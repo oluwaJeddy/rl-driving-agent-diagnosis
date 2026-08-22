@@ -1,0 +1,82 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 27,
+  "step": 6,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 6: value estimate dropped promptly at step 5 (TTC critical at step 4) but the agent's action deviated from the safe brake baseline from step 4 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 4,
+    "value_drop_step": 5,
+    "action_deviation_step": 4
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": -0.19296588003635406,
+      "ttc": 20.65517748588032,
+      "hazard_visible": true,
+      "hazard_distance": 29.297247004452732,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4944220488427259
+    },
+    {
+      "step": 2,
+      "value_estimate": -0.3649728298187256,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 25.142712938179105,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9145267309160158
+    },
+    {
+      "step": 3,
+      "value_estimate": -1.094707727432251,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 14.576051301264378,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9853985573346528
+    },
+    {
+      "step": 4,
+      "value_estimate": -1.095727562904358,
+      "ttc": 0.21622280819062728,
+      "hazard_visible": true,
+      "hazard_distance": 4.628806139886533,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.9975047934625906
+    },
+    {
+      "step": 5,
+      "value_estimate": -1.3383499383926392,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 8.927324953276187,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5850177158781584
+    },
+    {
+      "step": 6,
+      "value_estimate": -4.106639385223389,
+      "ttc": 0.5740471494018787,
+      "hazard_visible": true,
+      "hazard_distance": 5.242932960391049,
+      "action": 0,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.0
+    }
+  ]
+}

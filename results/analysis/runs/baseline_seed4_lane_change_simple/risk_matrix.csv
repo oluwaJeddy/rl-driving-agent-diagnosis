@@ -1,0 +1,4 @@
+Scenario,Failure Category,Severity,Severity (S),Likelihood,Likelihood (L),Risk Score,Risk Band,Mitigation
+lane_change/lane_change_simple,Prediction,SERIOUS,3,IMPROBABLE,1,3,Acceptable,Train on more diverse agent behaviours; add intent predictor
+lane_change/lane_change_simple,Planning,SERIOUS,3,FREQUENT,4,12,Unacceptable,Add safety constraint layer or action shield
+lane_change/lane_change_simple,Alignment,MINOR,2,OCCASIONAL,3,6,ALARP,Reshape reward function; add explicit collision-avoidance penalty

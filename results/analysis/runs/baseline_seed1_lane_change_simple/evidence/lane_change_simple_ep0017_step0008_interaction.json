@@ -1,0 +1,104 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 17,
+  "step": 8,
+  "category": "Interaction",
+  "subcategory": "right_of_way_violation",
+  "description": "Crash at step 8 in a multi-agent lane_change scenario with no single hazard ever reaching TTC<2.0s \u2013 consistent with a coordination/right-of-way failure rather than a reactive braking failure.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": 3,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.1616411209106445,
+      "ttc": 6.943207025999589,
+      "hazard_visible": true,
+      "hazard_distance": 25.336933135986328,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 2,
+      "value_estimate": 4.518789291381836,
+      "ttc": 5.202703973128332,
+      "hazard_visible": true,
+      "hazard_distance": 21.44083082675934,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 3,
+      "value_estimate": 4.108033180236816,
+      "ttc": 3.946265070442321,
+      "hazard_visible": true,
+      "hazard_distance": 17.195743322372437,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 4,
+      "value_estimate": 0.8113353848457336,
+      "ttc": 2.858189393095522,
+      "hazard_visible": true,
+      "hazard_distance": 12.778116762638092,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.08544411731306986
+    },
+    {
+      "step": 5,
+      "value_estimate": 4.584501266479492,
+      "ttc": 6.492996897311541,
+      "hazard_visible": true,
+      "hazard_distance": 10.200176388025284,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.01460139436681942
+    },
+    {
+      "step": 6,
+      "value_estimate": 5.464914321899414,
+      "ttc": 6.049168017196633,
+      "hazard_visible": true,
+      "hazard_distance": 8.745674788951874,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.002495206506425518
+    },
+    {
+      "step": 7,
+      "value_estimate": 5.423659801483154,
+      "ttc": 4.682011274453748,
+      "hazard_visible": true,
+      "hazard_distance": 7.247993350028992,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0004264014349107725
+    },
+    {
+      "step": 8,
+      "value_estimate": 5.373503684997559,
+      "ttc": 3.64363575908384,
+      "hazard_visible": true,
+      "hazard_distance": 5.685741454362869,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    }
+  ]
+}

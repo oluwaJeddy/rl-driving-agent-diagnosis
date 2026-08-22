@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 17,
+  "step": 5,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 5: value estimate dropped promptly at step 4 (TTC critical at step 5) but the agent's action deviated from the safe brake baseline from step 5 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 5,
+    "value_drop_step": 4,
+    "action_deviation_step": 5
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 6.3228912353515625,
+      "ttc": 6.943207025999589,
+      "hazard_visible": true,
+      "hazard_distance": 25.336933135986328,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 2,
+      "value_estimate": 6.562471866607666,
+      "ttc": 5.202703973128332,
+      "hazard_visible": true,
+      "hazard_distance": 21.44083082675934,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 3,
+      "value_estimate": 6.442418575286865,
+      "ttc": 3.946265070442321,
+      "hazard_visible": true,
+      "hazard_distance": 17.195743322372437,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 4,
+      "value_estimate": 2.611999273300171,
+      "ttc": 2.858189393095522,
+      "hazard_visible": true,
+      "hazard_distance": 12.778116762638092,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 5,
+      "value_estimate": 5.322849750518799,
+      "ttc": 1.3447911995262916,
+      "hazard_visible": true,
+      "hazard_distance": 7.687511295080185,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.0
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 8,
+  "step": 5,
+  "category": "Interaction",
+  "subcategory": "right_of_way_violation",
+  "description": "Crash at step 5 in a multi-agent lane_change scenario with no single hazard ever reaching TTC<2.0s \u2013 consistent with a coordination/right-of-way failure rather than a reactive braking failure.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": 4,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 3.642296075820923,
+      "ttc": 12.5346953715642,
+      "hazard_visible": true,
+      "hazard_distance": 29.535335302352905,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.08544411731306986
+    },
+    {
+      "step": 2,
+      "value_estimate": 3.3167121410369873,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 28.88053059577942,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.42915727705374884
+    },
+    {
+      "step": 3,
+      "value_estimate": 2.7287049293518066,
+      "ttc": 6.749858677496121,
+      "hazard_visible": true,
+      "hazard_distance": 26.65000557899475,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9024496948265363
+    },
+    {
+      "step": 4,
+      "value_estimate": 1.5792810916900635,
+      "ttc": 2.1653148586937667,
+      "hazard_visible": true,
+      "hazard_distance": 19.63125169277191,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5687739178747357
+    },
+    {
+      "step": 5,
+      "value_estimate": 1.4063705205917358,
+      "ttc": 2.112494207008086,
+      "hazard_visible": true,
+      "hazard_distance": 12.48985007405281,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9263085361008663
+    }
+  ]
+}

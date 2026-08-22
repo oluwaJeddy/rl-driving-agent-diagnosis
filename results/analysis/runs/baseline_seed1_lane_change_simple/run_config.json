@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-22T16:59:37.278210+00:00",
+  "model": "results\\checkpoints\\baseline\\seed_1\\ppo_baseline_final",
+  "vecnorm": "results\\checkpoints\\baseline\\seed_1\\vec_normalize.pkl",
+  "seed": 42,
+  "scenarios": [
+    "lane_change_simple"
+  ],
+  "episodes_per_scenario": 30,
+  "deterministic": true
+}

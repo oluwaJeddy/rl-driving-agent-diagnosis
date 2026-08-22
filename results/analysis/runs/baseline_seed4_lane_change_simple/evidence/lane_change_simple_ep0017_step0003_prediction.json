@@ -1,0 +1,49 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 17,
+  "step": 3,
+  "category": "Prediction",
+  "subcategory": "failed_anticipation",
+  "description": "Crash at step 3: hazard first visible at step 1, TTC fell below 2.0s at step 3, but the critic's value estimate dropped never \u2013 agent saw the hazard but didn't anticipate the collision in time.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 3,
+    "value_drop_step": null,
+    "action_deviation_step": 3
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 1.7386826276779175,
+      "ttc": 6.943207025999589,
+      "hazard_visible": true,
+      "hazard_distance": 25.336933135986328,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9145558826869301
+    },
+    {
+      "step": 2,
+      "value_estimate": 1.2420696020126343,
+      "ttc": 2.289701467452094,
+      "hazard_visible": true,
+      "hazard_distance": 18.92816573381424,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9853986056331806
+    },
+    {
+      "step": 3,
+      "value_estimate": 0.8104854822158813,
+      "ttc": 1.0973435066205677,
+      "hazard_visible": true,
+      "hazard_distance": 10.108134895563126,
+      "action": 2,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.0
+    }
+  ]
+}

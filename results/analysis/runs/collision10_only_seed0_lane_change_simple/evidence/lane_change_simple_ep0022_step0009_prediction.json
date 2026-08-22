@@ -1,0 +1,115 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 22,
+  "step": 9,
+  "category": "Prediction",
+  "subcategory": "failed_anticipation",
+  "description": "Crash at step 9: hazard first visible at step 1, TTC fell below 2.0s at step 4, but the critic's value estimate dropped only at step 6 \u2013 agent saw the hazard but didn't anticipate the collision in time.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 4,
+    "value_drop_step": 6,
+    "action_deviation_step": 4
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.792476177215576,
+      "ttc": 6.551834771974494,
+      "hazard_visible": true,
+      "hazard_distance": 24.9157577753067,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 2,
+      "value_estimate": 4.833056926727295,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 19.66311920003899,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 3,
+      "value_estimate": 6.1579060554504395,
+      "ttc": 2.205681591155812,
+      "hazard_visible": true,
+      "hazard_distance": 14.017677017359057,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 4,
+      "value_estimate": 5.8126301765441895,
+      "ttc": 1.20058911330272,
+      "hazard_visible": true,
+      "hazard_distance": 8.396336787475937,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 5,
+      "value_estimate": 5.450122356414795,
+      "ttc": 0.19543100772066646,
+      "hazard_visible": true,
+      "hazard_distance": 4.179227980513188,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 6,
+      "value_estimate": 5.068984508514404,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 6.402866626819216,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 7,
+      "value_estimate": 1.147400140762329,
+      "ttc": 3.5372488352641462,
+      "hazard_visible": true,
+      "hazard_distance": 22.00075089931488,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 8,
+      "value_estimate": 0.9689460396766663,
+      "ttc": 2.6079107403195123,
+      "hazard_visible": true,
+      "hazard_distance": 15.84617793560028,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 9,
+      "value_estimate": 0.7786905765533447,
+      "ttc": 1.6618122441552434,
+      "hazard_visible": true,
+      "hazard_distance": 9.841737151145935,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.17777777777777787
+    }
+  ]
+}

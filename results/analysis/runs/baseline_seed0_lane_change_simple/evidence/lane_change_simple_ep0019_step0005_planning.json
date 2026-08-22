@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 19,
+  "step": 5,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 5: value estimate dropped promptly at step 2 (TTC critical at step 4) but the agent's action deviated from the safe brake baseline from step 4 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 4,
+    "value_drop_step": 2,
+    "action_deviation_step": 4
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 6.3082475662231445,
+      "ttc": 14.300600450806915,
+      "hazard_visible": true,
+      "hazard_distance": 28.40915322303772,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9145558826869301
+    },
+    {
+      "step": 2,
+      "value_estimate": 4.635865688323975,
+      "ttc": 3.6687691147256376,
+      "hazard_visible": true,
+      "hazard_distance": 23.871341347694397,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5708427229462512
+    },
+    {
+      "step": 3,
+      "value_estimate": 5.139413833618164,
+      "ttc": 5.4203878049895975,
+      "hazard_visible": true,
+      "hazard_distance": 19.1793754696846,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9266620705473236
+    },
+    {
+      "step": 4,
+      "value_estimate": 3.985349178314209,
+      "ttc": 1.8330468071914672,
+      "hazard_visible": true,
+      "hazard_distance": 13.378606736660004,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.9874674107046957
+    },
+    {
+      "step": 5,
+      "value_estimate": 2.932431936264038,
+      "ttc": 0.7065500177585415,
+      "hazard_visible": true,
+      "hazard_distance": 5.658302456140518,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.0
+    }
+  ]
+}

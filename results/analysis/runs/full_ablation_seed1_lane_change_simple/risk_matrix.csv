@@ -1,0 +1,3 @@
+Scenario,Failure Category,Severity,Severity (S),Likelihood,Likelihood (L),Risk Score,Risk Band,Mitigation
+lane_change/lane_change_simple,Planning,SERIOUS,3,OCCASIONAL,3,9,Unacceptable,Add safety constraint layer or action shield
+lane_change/lane_change_simple,Interaction,MINOR,2,OCCASIONAL,3,6,ALARP,Multi-agent co-training; explicit yield and priority model

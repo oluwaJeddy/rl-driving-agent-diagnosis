@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 6,
+  "step": 5,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 5: value estimate dropped promptly at step 2 (TTC critical at step 5) but the agent's action deviated from the safe brake baseline from step 5 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 5,
+    "value_drop_step": 2,
+    "action_deviation_step": 5
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": -0.5936190485954285,
+      "ttc": 11.367156111498533,
+      "hazard_visible": true,
+      "hazard_distance": 27.94727087020874,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 2,
+      "value_estimate": -1.6156500577926636,
+      "ttc": 7.168104430104499,
+      "hazard_visible": true,
+      "hazard_distance": 25.00292956829071,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 3,
+      "value_estimate": -2.070030689239502,
+      "ttc": 4.797753911099064,
+      "hazard_visible": true,
+      "hazard_distance": 21.078577637672424,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 4,
+      "value_estimate": -2.5089516639709473,
+      "ttc": 3.1832961226044802,
+      "hazard_visible": true,
+      "hazard_distance": 16.32799655199051,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 5,
+      "value_estimate": -2.8699119091033936,
+      "ttc": 1.9115235454461477,
+      "hazard_visible": true,
+      "hazard_distance": 10.915625095367432,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.5
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-22T17:07:43.696837+00:00",
+  "model": "results\\checkpoints\\collision10_only\\seed_1\\ppo_collision10_only_final",
+  "vecnorm": "results\\checkpoints\\collision10_only\\seed_1\\vec_normalize.pkl",
+  "seed": 42,
+  "scenarios": [
+    "lane_change_simple"
+  ],
+  "episodes_per_scenario": 30,
+  "deterministic": true
+}

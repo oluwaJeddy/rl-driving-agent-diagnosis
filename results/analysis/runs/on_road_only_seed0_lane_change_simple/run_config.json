@@ -1,0 +1,11 @@
+{
+  "timestamp": "2026-08-22T17:05:20.066025+00:00",
+  "model": "results\\checkpoints\\on_road_only\\seed_0\\ppo_on_road_only_final",
+  "vecnorm": "results\\checkpoints\\on_road_only\\seed_0\\vec_normalize.pkl",
+  "seed": 42,
+  "scenarios": [
+    "lane_change_simple"
+  ],
+  "episodes_per_scenario": 30,
+  "deterministic": true
+}

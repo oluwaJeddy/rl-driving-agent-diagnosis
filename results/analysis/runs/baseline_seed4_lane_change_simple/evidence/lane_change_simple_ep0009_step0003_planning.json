@@ -1,0 +1,49 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 9,
+  "step": 3,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 3: value estimate dropped promptly at step 2 (TTC critical at step 2) but the agent's action deviated from the safe brake baseline from step 2 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 2,
+    "value_drop_step": 2,
+    "action_deviation_step": 2
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 1.8154975175857544,
+      "ttc": 7.67698121529332,
+      "hazard_visible": true,
+      "hazard_distance": 25.157221243661514,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.9145558826869301
+    },
+    {
+      "step": 2,
+      "value_estimate": 0.7790902853012085,
+      "ttc": 1.7306270739913754,
+      "hazard_visible": true,
+      "hazard_distance": 17.93662661098022,
+      "action": 2,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.9807808483807513
+    },
+    {
+      "step": 3,
+      "value_estimate": 0.34570857882499695,
+      "ttc": 0.5938629006366478,
+      "hazard_visible": true,
+      "hazard_distance": 6.835420867724822,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.0
+    }
+  ]
+}

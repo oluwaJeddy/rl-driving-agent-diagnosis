@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_simple",
+  "episode_id": 18,
+  "step": 5,
+  "category": "Prediction",
+  "subcategory": "failed_anticipation",
+  "description": "Crash at step 5: hazard first visible at step 1, TTC fell below 2.0s at step 5, but the critic's value estimate dropped never \u2013 agent saw the hazard but didn't anticipate the collision in time.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 5,
+    "value_drop_step": null,
+    "action_deviation_step": 5
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 6.018377780914307,
+      "ttc": 7.393949032758617,
+      "hazard_visible": true,
+      "hazard_distance": 28.361985087394714,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 2,
+      "value_estimate": 6.1814284324646,
+      "ttc": 5.790715554814755,
+      "hazard_visible": true,
+      "hazard_distance": 24.331340193748474,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 3,
+      "value_estimate": 6.237614154815674,
+      "ttc": 4.593409917627898,
+      "hazard_visible": true,
+      "hazard_distance": 20.04285901784897,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 4,
+      "value_estimate": 5.68846321105957,
+      "ttc": 3.5335584565250606,
+      "hazard_visible": true,
+      "hazard_distance": 15.644140541553497,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.5
+    },
+    {
+      "step": 5,
+      "value_estimate": 6.61043119430542,
+      "ttc": 1.8898093777404468,
+      "hazard_visible": true,
+      "hazard_distance": 10.657316446304321,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.5
+    }
+  ]
+}
