@@ -1,0 +1,22 @@
+[cut_in_aggressive | seed 0] loading ppo_baseline_final.zip + vec_normalize.pkl
+  [cut_in_aggressive] 10/10 eps | crashes: 1 | avg_reward: 26.3
+[cut_in_aggressive | seed 0] done: 10 episodes, 1 collisions
+[cut_in_aggressive | seed 1] loading ppo_baseline_final.zip + vec_normalize.pkl
+  [cut_in_aggressive] 10/10 eps | crashes: 5 | avg_reward: 22.2
+[cut_in_aggressive | seed 1] done: 10 episodes, 5 collisions
+[cut_in_aggressive | seed 2] loading ppo_baseline_final.zip + vec_normalize.pkl
+  [cut_in_aggressive] 10/10 eps | crashes: 1 | avg_reward: 26.0
+[cut_in_aggressive | seed 2] done: 10 episodes, 1 collisions
+[cut_in_aggressive | seed 3] loading ppo_baseline_final.zip + vec_normalize.pkl
+  [cut_in_aggressive] 10/10 eps | crashes: 1 | avg_reward: 27.8
+[cut_in_aggressive | seed 3] done: 10 episodes, 1 collisions
+[cut_in_aggressive | seed 4] loading ppo_baseline_final.zip + vec_normalize.pkl
+  [cut_in_aggressive] 10/10 eps | crashes: 2 | avg_reward: 25.6
+[cut_in_aggressive | seed 4] done: 10 episodes, 2 collisions
+
+Wrote partial -> C:\Users\Mr Ayoola\rl-driving-agent-diagnosis\results\analysis\baseline_all_scenarios.cut_in_aggressive.csv
+Run with --merge once all 8 scenario partials exist to produce the final summary CSV.
+
+scenario                     n_seeds    crash_rate   Perception   Prediction     Planning    Alignment   Robustness  Interaction
+--------------------------------------------------------------------------------------------------------------------------------
+cut_in_aggressive                  5  0.200±0.173    0.0±0.0     0.0±0.0     3.6±2.5     0.0±0.0     0.0±0.0     0.0±0.0  

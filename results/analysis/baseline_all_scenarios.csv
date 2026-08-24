@@ -1,0 +1,9 @@
+scenario,n_seeds,n_episodes_per_seed,crash_rate_mean,crash_rate_std,perception_mean,perception_std,prediction_mean,prediction_std,planning_mean,planning_std,alignment_mean,alignment_std,robustness_mean,robustness_std,interaction_mean,interaction_std
+lane_change_blocked,5,30,0.16,0.0596,0.0,0.0,1.8,2.049,14.4,6.731,0.8,1.789,0.0,0.0,1.2,1.304
+cut_in_aggressive,5,30,0.2667,0.1155,0.0,0.0,0.6,0.548,17.6,3.362,0.2,0.447,0.0,0.0,0.0,0.0
+cut_in_high_speed,5,30,0.1467,0.0558,0.0,0.0,0.2,0.447,13.8,3.701,0.0,0.0,0.0,0.0,0.0,0.0
+emergency_braking_dense,5,30,0.8133,0.1216,0.0,0.0,6.4,4.615,20.0,5.244,3.6,4.506,0.0,0.0,0.0,0.0
+emergency_braking_lead_stop,5,30,0.1267,0.0641,0.0,0.0,1.4,1.342,12.2,2.775,0.4,0.548,0.0,0.0,0.0,0.0
+junction_crossing_unprotected,5,30,0.5267,0.0149,0.0,0.0,14.0,0.707,0.0,0.0,0.6,0.894,15.4,1.342,0.0,0.0
+junction_crossing_busy,5,30,0.7333,0.0,0.0,0.0,8.0,0.0,0.0,0.0,0.2,0.447,21.8,0.447,0.0,0.0
+pedestrian_crossing,5,30,0.98,0.0447,0.0,0.0,28.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

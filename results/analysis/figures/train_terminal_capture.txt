@@ -1,0 +1,49 @@
+Condition : baseline
+Seed      : 999
+Output    : <scratch>\train_smoke_out\baseline\seed_999
+Reward config overrides: {'collision_reward': -5.0, 'lane_change_reward': 0.1}
+
+Using cpu device
+Logging to <scratch>\train_smoke_out\tb_logs\baseline\PPO_1
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 12.1     |
+|    ep_rew_mean     | 10.5     |
+| time/              |          |
+|    fps             | 10       |
+|    iterations      | 1        |
+|    time_elapsed    | 97       |
+|    total_timesteps | 1024     |
+---------------------------------
+Eval num_timesteps=2048, episode_reward=37.00 +/- 0.19
+Episode length: 40.00 +/- 0.00
+---------------------------------------
+| eval/                   |           |
+|    mean_ep_length       | 40        |
+|    mean_reward          | 37        |
+| time/                   |           |
+|    total_timesteps      | 2048      |
+| train/                  |           |
+|    approx_kl            | 0.0167962 |
+|    clip_fraction        | 0.172     |
+|    clip_range           | 0.2       |
+|    entropy_loss         | -1.6      |
+|    explained_variance   | 0.00687   |
+|    learning_rate        | 0.0003    |
+|    loss                 | 0.206     |
+|    n_updates            | 10        |
+|    policy_gradient_loss | -0.0296   |
+|    value_loss           | 1.83      |
+---------------------------------------
+New best mean reward!
+---------------------------------
+| rollout/           |          |
+|    ep_len_mean     | 13.2     |
+|    ep_rew_mean     | 11.6     |
+| time/              |          |
+|    fps             | 7        |
+|    iterations      | 2        |
+|    time_elapsed    | 256      |
+|    total_timesteps | 2048     |
+---------------------------------
+ 100% ----------------------------- 2,048/2,048  [ 0:04:16 < 0:00:00 , ? it/s ]
