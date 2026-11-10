@@ -1,0 +1,15 @@
+part,metric,comparison,group_a,n_a,median_a,group_b,n_b,median_b,U,p_exact,p_asymptotic_tie_corrected
+1a,Alignment,increased_collision_weight vs unchanged_collision_weight,full_ablation+collision10_only,8,3.5,baseline+on_road_only,8,12.5,23.5,0.4418026418026417,0.3969688691794857
+1b,Alignment,baseline vs full_ablation,baseline,5,12,full_ablation,5,4,17.0,0.42063492063492064,0.4033953048926283
+1b,Alignment,baseline vs on_road_only,baseline,5,12,on_road_only,3,13,8.5,1.0,0.8807910225110613
+1b,Alignment,baseline vs collision10_only,baseline,5,12,collision10_only,3,0,10.0,0.5714285714285714,0.5485954657999336
+1a,Planning,increased_collision_weight vs unchanged_collision_weight,full_ablation+collision10_only,8,15.0,baseline+on_road_only,8,16.0,30.5,0.959129759129759,0.9162363205592509
+1b,Planning,baseline vs full_ablation,baseline,5,18,full_ablation,5,14,14.5,0.8412698412698413,0.7532980334628383
+1b,Planning,baseline vs on_road_only,baseline,5,18,on_road_only,3,15,9.5,0.7857142857142857,0.6527828452619114
+1b,Planning,baseline vs collision10_only,baseline,5,18,collision10_only,3,16,8.0,1.0,1.0
+
+part,condition,n_seeds,crash_pct_stored,alignment_stored,planning_stored,perception_stored,crash_rate_per_seed,alignment_per_seed,planning_per_seed,perception_per_seed
+2_pedestrian_static,baseline,5,97.3 ± 5.3,0.6 ± 1.2,1.8 ± 0.4,0.0 ± 0.0,"[1.0, 1.0, 1.0, 1.0, 0.8667]","[0, 0, 0, 0, 3]","[2, 2, 2, 2, 1]","[0, 0, 0, 0, 0]"
+2_pedestrian_static,full_ablation,5,94.7 ± 4.5,1.0 ± 1.5,2.0 ± 0.0,0.0 ± 0.0,"[0.9667, 0.9333, 0.8667, 1.0, 0.9667]","[0, 4, 1, 0, 0]","[2, 2, 2, 2, 2]","[0, 0, 0, 0, 0]"
+2_pedestrian_static,on_road_only,3,100.0 ± 0.0,0.0 ± 0.0,2.0 ± 0.0,0.0 ± 0.0,"[1.0, 1.0, 1.0]","[0, 0, 0]","[2, 2, 2]","[0, 0, 0]"
+2_pedestrian_static,collision10_only,3,100.0 ± 0.0,0.0 ± 0.0,2.0 ± 0.0,0.0 ± 0.0,"[1.0, 1.0, 1.0]","[0, 0, 0]","[2, 2, 2]","[0, 0, 0]"

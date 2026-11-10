@@ -1,0 +1,5 @@
+condition,n_seeds,alignment_mean,planning_mean,lateral_mean,longitudinal_mean,alignment_per_seed,planning_per_seed
+baseline,5,12.40,17.60,4.80,7.60,"[21, 12, 2, 8, 19]","[9, 18, 28, 22, 11]"
+full_ablation,5,7.00,15.60,1.00,6.00,"[5, 4, 3, 0, 23]","[12, 14, 27, 18, 7]"
+on_road_only,3,10.67,14.33,0.33,10.33,"[13, 19, 0]","[17, 11, 15]"
+collision10_only,3,7.33,18.00,0.00,7.33,"[0, 22, 0]","[30, 8, 16]"
