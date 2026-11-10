@@ -1,0 +1,60 @@
+{
+  "scenario": "cut_in_high_speed",
+  "episode_id": 24,
+  "step": 4,
+  "category": "Planning",
+  "subcategory": "collision",
+  "description": "Crash at step 4 (speed=18.7 m/s) \u2013 hazard was visible but no specific evidence pattern matched; defaulting to Planning.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": null,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.714701175689697,
+      "ttc": 5.460950533777621,
+      "hazard_visible": true,
+      "hazard_distance": 20.64892202615738,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 2,
+      "value_estimate": 5.755310535430908,
+      "ttc": 2.942061527039047,
+      "hazard_visible": true,
+      "hazard_distance": 16.58039093017578,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 3,
+      "value_estimate": 5.289000988006592,
+      "ttc": 2.422593482426104,
+      "hazard_visible": true,
+      "hazard_distance": 11.010666191577911,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 4,
+      "value_estimate": 5.691185474395752,
+      "ttc": 2.422179392601856,
+      "hazard_visible": true,
+      "hazard_distance": 7.243066281080246,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    }
+  ]
+}

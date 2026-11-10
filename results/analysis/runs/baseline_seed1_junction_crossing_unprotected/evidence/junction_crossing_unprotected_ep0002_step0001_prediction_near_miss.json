@@ -1,0 +1,71 @@
+{
+  "scenario": "junction_crossing_unprotected",
+  "episode_id": 2,
+  "step": 1,
+  "category": "Prediction",
+  "subcategory": "near_miss",
+  "description": "Near-miss at step 1: minimum TTC reached 0.45s (critical threshold crossed at step 1) \u2013 episode terminated normally without crash.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 1,
+    "value_drop_step": 5,
+    "action_deviation_step": 3
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": -0.10052226483821869,
+      "ttc": 0.45329661507805835,
+      "hazard_visible": true,
+      "hazard_distance": 4.472135935007574,
+      "action": 4,
+      "baseline_action": 4,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 2,
+      "value_estimate": 0.012488916516304016,
+      "ttc": 0.45329661507805835,
+      "hazard_visible": true,
+      "hazard_distance": 4.472135935007574,
+      "action": 4,
+      "baseline_action": 4,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 3,
+      "value_estimate": 0.6183243989944458,
+      "ttc": 0.45329661507805835,
+      "hazard_visible": true,
+      "hazard_distance": 4.472135935007574,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 4,
+      "value_estimate": -0.2751898169517517,
+      "ttc": 0.45329661507805835,
+      "hazard_visible": true,
+      "hazard_distance": 4.472135935007574,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 5,
+      "value_estimate": -0.40151768922805786,
+      "ttc": 3.080522671138711,
+      "hazard_visible": true,
+      "hazard_distance": 25.270304470647922,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    }
+  ]
+}

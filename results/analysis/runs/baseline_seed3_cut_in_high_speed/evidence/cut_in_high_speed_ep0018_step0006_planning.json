@@ -1,0 +1,82 @@
+{
+  "scenario": "cut_in_high_speed",
+  "episode_id": 18,
+  "step": 6,
+  "category": "Planning",
+  "subcategory": "collision",
+  "description": "Crash at step 6 (speed=10.2 m/s) \u2013 hazard was visible but no specific evidence pattern matched; defaulting to Planning.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 5,
+    "value_drop_step": 2,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.700550079345703,
+      "ttc": 5.758413491981234,
+      "hazard_visible": true,
+      "hazard_distance": 22.447597398770792,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 2,
+      "value_estimate": 3.8342270851135254,
+      "ttc": 3.1571679772587458,
+      "hazard_visible": true,
+      "hazard_distance": 18.405084775537244,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 3,
+      "value_estimate": 3.920245409011841,
+      "ttc": 2.5704253519994644,
+      "hazard_visible": true,
+      "hazard_distance": 12.590409762671248,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 4,
+      "value_estimate": 3.6292312145233154,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 10.168314119089095,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 5,
+      "value_estimate": 3.7145884037017822,
+      "ttc": 0.9620896115537281,
+      "hazard_visible": true,
+      "hazard_distance": 6.598849540742078,
+      "action": 4,
+      "baseline_action": 4,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 6,
+      "value_estimate": 3.205777645111084,
+      "ttc": 2.142607567956593,
+      "hazard_visible": true,
+      "hazard_distance": 4.673900089592369,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    }
+  ]
+}

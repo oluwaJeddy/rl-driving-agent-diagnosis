@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_blocked",
+  "episode_id": 21,
+  "step": 5,
+  "category": "Planning",
+  "subcategory": "collision",
+  "description": "Crash at step 5 (speed=17.6 m/s) \u2013 hazard was visible but no specific evidence pattern matched; defaulting to Planning.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 4,
+    "value_drop_step": 4,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.46520471572876,
+      "ttc": 6.777396982813885,
+      "hazard_visible": true,
+      "hazard_distance": 23.11050295829773,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.08544411731306986
+    },
+    {
+      "step": 2,
+      "value_estimate": 4.7966389656066895,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 19.576769123742682,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.007596381755985604
+    },
+    {
+      "step": 3,
+      "value_estimate": 5.503809452056885,
+      "ttc": 4.759116781512744,
+      "hazard_visible": true,
+      "hazard_distance": 16.242826260182298,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.41699261543274596
+    },
+    {
+      "step": 4,
+      "value_estimate": 3.830446481704712,
+      "ttc": 1.6650888240053927,
+      "hazard_visible": true,
+      "hazard_distance": 10.861761761366422,
+      "action": 4,
+      "baseline_action": 4,
+      "action_deviation": false,
+      "speed_reward": 0.07126872613288845
+    },
+    {
+      "step": 5,
+      "value_estimate": 3.7411725521087646,
+      "ttc": 2.702215107485925,
+      "hazard_visible": true,
+      "hazard_distance": 6.726008702607254,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    }
+  ]
+}

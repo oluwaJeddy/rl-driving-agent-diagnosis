@@ -1,0 +1,17 @@
+condition,seed,status,n_eval_points,n_eval_episodes,final_timestep,final_mean_reward,final_std_reward,prev_mean_reward,delta_last_two
+baseline,0,ok,5,10,50000,30.058,13.397,36.616,-6.558
+baseline,1,ok,5,10,50000,36.904,0.188,36.04,0.864
+baseline,2,ok,5,10,50000,35.139,5.584,33.474,1.665
+baseline,3,ok,5,10,50000,37.077,0.088,36.273,0.804
+baseline,4,ok,5,10,50000,37.13,0.363,35.805,1.325
+full_ablation,0,ok,5,10,50000,39.853,6.895,42.077,-2.224
+full_ablation,1,ok,5,10,50000,37.358,9.798,39.797,-2.439
+full_ablation,2,ok,5,10,50000,42.109,0.181,38.394,3.715
+full_ablation,3,ok,5,10,50000,42.329,0.086,38.78,3.55
+full_ablation,4,ok,5,10,50000,39.485,7.845,42.103,-2.618
+on_road_only,0,ok,5,10,50000,40.096,12.204,43.872,-3.776
+on_road_only,1,ok,5,10,50000,43.805,0.142,43.958,-0.152
+on_road_only,2,ok,5,10,50000,44.032,0.299,43.307,0.726
+collision10_only,0,ok,5,10,50000,38.223,0.4,33.298,4.925
+collision10_only,1,ok,5,10,50000,38.359,0.155,36.475,1.884
+collision10_only,2,ok,5,10,50000,38.309,0.169,35.265,3.043

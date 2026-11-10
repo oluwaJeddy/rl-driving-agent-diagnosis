@@ -1,0 +1,203 @@
+{
+  "scenario": "lane_change_blocked",
+  "episode_id": 13,
+  "step": 17,
+  "category": "Interaction",
+  "subcategory": "right_of_way_violation",
+  "description": "Crash at step 17 in a multi-agent lane_change scenario with no single hazard ever reaching TTC<2.0s \u2013 consistent with a coordination/right-of-way failure rather than a reactive braking failure.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": 3,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 6.057956218719482,
+      "ttc": 6.541921670897309,
+      "hazard_visible": true,
+      "hazard_distance": 21.88216745853424,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.08544411731306986
+    },
+    {
+      "step": 2,
+      "value_estimate": 5.1839280128479,
+      "ttc": 36.72916417234653,
+      "hazard_visible": true,
+      "hazard_distance": 20.319335162639618,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.01460139436681942
+    },
+    {
+      "step": 3,
+      "value_estimate": 4.988804340362549,
+      "ttc": 47.77443704830802,
+      "hazard_visible": true,
+      "hazard_distance": 19.888918101787567,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.417051089193356
+    },
+    {
+      "step": 4,
+      "value_estimate": 4.695522785186768,
+      "ttc": 3.6166969354129668,
+      "hazard_visible": true,
+      "hazard_distance": 16.905684769153595,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.07126912438116192
+    },
+    {
+      "step": 5,
+      "value_estimate": 4.472393035888672,
+      "ttc": 11.092217886091186,
+      "hazard_visible": true,
+      "hazard_distance": 14.284706115722656,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.012179054848847315
+    },
+    {
+      "step": 6,
+      "value_estimate": 2.267634630203247,
+      "ttc": 19.401262626945964,
+      "hazard_visible": true,
+      "hazard_distance": 13.35456669330597,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4166371398694643
+    },
+    {
+      "step": 7,
+      "value_estimate": 1.774096131324768,
+      "ttc": 2.1838865995115997,
+      "hazard_visible": true,
+      "hazard_distance": 10.234469175338745,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.07119838531197722
+    },
+    {
+      "step": 8,
+      "value_estimate": 3.0372486114501953,
+      "ttc": 6.559128166015388,
+      "hazard_visible": true,
+      "hazard_distance": 7.670310884714127,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.01216696637419581
+    },
+    {
+      "step": 9,
+      "value_estimate": 2.91848087310791,
+      "ttc": 13.454775577471082,
+      "hazard_visible": true,
+      "hazard_distance": 6.889906525611877,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0020791914044419714
+    },
+    {
+      "step": 10,
+      "value_estimate": 2.7940213680267334,
+      "ttc": 18.720115222160736,
+      "hazard_visible": true,
+      "hazard_distance": 6.46984800696373,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.00035530934855501075
+    },
+    {
+      "step": 11,
+      "value_estimate": 2.687045097351074,
+      "ttc": 23.084710721605095,
+      "hazard_visible": true,
+      "hazard_distance": 6.163740158081055,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 6.071818732067413e-05
+    },
+    {
+      "step": 12,
+      "value_estimate": 2.598602056503296,
+      "ttc": 28.47852104063883,
+      "hazard_visible": true,
+      "hazard_distance": 5.925120040774345,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0376023840663607e-05
+    },
+    {
+      "step": 13,
+      "value_estimate": 2.5233631134033203,
+      "ttc": 36.529887237559606,
+      "hazard_visible": true,
+      "hazard_distance": 5.741345137357712,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.7731403961107616e-06
+    },
+    {
+      "step": 14,
+      "value_estimate": 2.455791473388672,
+      "ttc": 49.989193251113896,
+      "hazard_visible": true,
+      "hazard_distance": 5.605640634894371,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 3.0300883224754216e-07
+    },
+    {
+      "step": 15,
+      "value_estimate": 2.3915157318115234,
+      "ttc": 76.31430830104755,
+      "hazard_visible": true,
+      "hazard_distance": 5.512528121471405,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 5.178064448330133e-08
+    },
+    {
+      "step": 16,
+      "value_estimate": 2.3807573318481445,
+      "ttc": 147.69350670529934,
+      "hazard_visible": true,
+      "hazard_distance": 5.4571233689785,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 8.848702748309733e-09
+    },
+    {
+      "step": 17,
+      "value_estimate": 2.746298313140869,
+      "ttc": 935.2440803487802,
+      "hazard_visible": true,
+      "hazard_distance": 5.435030534863472,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    }
+  ]
+}

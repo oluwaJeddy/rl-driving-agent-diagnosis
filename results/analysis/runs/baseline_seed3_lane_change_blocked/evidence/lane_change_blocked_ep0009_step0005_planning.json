@@ -1,0 +1,71 @@
+{
+  "scenario": "lane_change_blocked",
+  "episode_id": 9,
+  "step": 5,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 5: value estimate dropped promptly at step 3 (TTC critical at step 5) but the agent's action deviated from the safe brake baseline from step 5 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 5,
+    "value_drop_step": 3,
+    "action_deviation_step": 5
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 5.716538429260254,
+      "ttc": 6.774912192091987,
+      "hazard_visible": true,
+      "hazard_distance": 22.280734657865075,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.08544411731306986
+    },
+    {
+      "step": 2,
+      "value_estimate": 6.27250862121582,
+      "ttc": 8.321771253624844,
+      "hazard_visible": true,
+      "hazard_distance": 19.67595421320994,
+      "action": 4,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.01460139436681942
+    },
+    {
+      "step": 3,
+      "value_estimate": 5.158736705780029,
+      "ttc": 7.679450049668444,
+      "hazard_visible": true,
+      "hazard_distance": 17.469430642948797,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.0
+    },
+    {
+      "step": 4,
+      "value_estimate": 6.149141311645508,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 16.879650479760457,
+      "action": 3,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 0.4149247331997067
+    },
+    {
+      "step": 5,
+      "value_estimate": 6.055850505828857,
+      "ttc": 1.5918257218557255,
+      "hazard_visible": true,
+      "hazard_distance": 11.983726471026873,
+      "action": 2,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 0.31124787542723775
+    }
+  ]
+}
