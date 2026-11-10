@@ -5,3 +5,9 @@ data/raw/
 results/checkpoints/
 *.zip
 .DS_Store
+
+# Local tooling, cluster logs and scratch output
+.claude/
+slurm/logs/
+results/videos/
+results/evaluation_rerun_lcs/
