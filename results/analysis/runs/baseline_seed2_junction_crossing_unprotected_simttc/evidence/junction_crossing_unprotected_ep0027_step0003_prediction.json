@@ -1,0 +1,49 @@
+{
+  "scenario": "junction_crossing_unprotected",
+  "episode_id": 27,
+  "step": 3,
+  "category": "Prediction",
+  "subcategory": "failed_anticipation",
+  "description": "Crash at step 3: hazard first visible at step 1, TTC fell below 2.0s at step 3, but the critic's value estimate dropped never \u2013 agent saw the hazard but didn't anticipate the collision in time.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 3,
+    "value_drop_step": null,
+    "action_deviation_step": 3
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 0.06353814154863358,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 50.52433957617334,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 2,
+      "value_estimate": -0.016043148934841156,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 33.32869271843948,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 3,
+      "value_estimate": -0.11759863048791885,
+      "ttc": 0.6243902506499596,
+      "hazard_visible": true,
+      "hazard_distance": 13.300029504559737,
+      "action": 2,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    }
+  ]
+}

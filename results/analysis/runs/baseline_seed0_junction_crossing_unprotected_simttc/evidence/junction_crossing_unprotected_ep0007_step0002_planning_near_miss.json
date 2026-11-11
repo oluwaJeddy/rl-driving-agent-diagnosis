@@ -1,0 +1,60 @@
+{
+  "scenario": "junction_crossing_unprotected",
+  "episode_id": 7,
+  "step": 2,
+  "category": "Planning",
+  "subcategory": "near_miss",
+  "description": "Near-miss at step 2: minimum TTC reached 1.82s (critical threshold crossed at step 2) \u2013 episode terminated normally without crash.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 2,
+    "value_drop_step": 3,
+    "action_deviation_step": 2
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": -0.08043155819177628,
+      "ttc": 19.81962420261478,
+      "hazard_visible": true,
+      "hazard_distance": 23.464709938467692,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 2,
+      "value_estimate": -0.13183709979057312,
+      "ttc": 1.8211516433686907,
+      "hazard_visible": true,
+      "hazard_distance": 17.255467571585616,
+      "action": 3,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 3,
+      "value_estimate": -1.325203776359558,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 8.373188257904234,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 4,
+      "value_estimate": -1.589147686958313,
+      "ttc": null,
+      "hazard_visible": false,
+      "hazard_distance": null,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    }
+  ]
+}

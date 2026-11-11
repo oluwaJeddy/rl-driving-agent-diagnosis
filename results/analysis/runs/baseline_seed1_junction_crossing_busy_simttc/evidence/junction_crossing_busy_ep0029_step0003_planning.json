@@ -1,0 +1,49 @@
+{
+  "scenario": "junction_crossing_busy",
+  "episode_id": 29,
+  "step": 3,
+  "category": "Planning",
+  "subcategory": "unsafe_action_despite_recognition",
+  "description": "Crash at step 3: value estimate dropped promptly at step 3 (TTC critical at step 3) but the agent's action deviated from the safe brake baseline from step 3 onward \u2013 risk was recognised but not acted on.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 3,
+    "value_drop_step": 3,
+    "action_deviation_step": 3
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 7.646296501159668,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 47.35901903284518,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 2,
+      "value_estimate": 8.494985580444336,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 37.85460979641964,
+      "action": 1,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 3,
+      "value_estimate": 6.193398952484131,
+      "ttc": 0.9116296250040462,
+      "hazard_visible": true,
+      "hazard_distance": 19.347717618686705,
+      "action": 1,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "scenario": "junction_crossing_busy",
+  "episode_id": 27,
+  "step": 3,
+  "category": "Robustness",
+  "subcategory": "ood_surprise",
+  "description": "Crash at step 3: TTC went from safe to critical within 1 step(s) of the hazard first appearing, in an OOD/high-density context (junction_crossing) \u2013 no gradual warning, suggesting the dynamics fell outside the training distribution.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": 2,
+    "value_drop_step": null,
+    "action_deviation_step": 2
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 3.052915334701538,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 50.84052463512161,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 2,
+      "value_estimate": 3.107229471206665,
+      "ttc": 1.7662299369634487,
+      "hazard_visible": true,
+      "hazard_distance": 34.481074780415675,
+      "action": 0,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 3,
+      "value_estimate": 3.0225412845611572,
+      "ttc": 0.6800882613966178,
+      "hazard_visible": true,
+      "hazard_distance": 14.247246925865925,
+      "action": 0,
+      "baseline_action": 4,
+      "action_deviation": true,
+      "speed_reward": 1.0
+    }
+  ]
+}

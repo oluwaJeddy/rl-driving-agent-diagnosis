@@ -1,0 +1,60 @@
+{
+  "scenario": "junction_crossing_busy",
+  "episode_id": 26,
+  "step": 4,
+  "category": "Interaction",
+  "subcategory": "right_of_way_violation",
+  "description": "Crash at step 4 in a multi-agent junction_crossing scenario with no single hazard ever reaching TTC<2.0s \u2013 consistent with a coordination/right-of-way failure rather than a reactive braking failure.",
+  "evidence_summary": {
+    "hazard_visible_step": 1,
+    "ttc_critical_step": null,
+    "value_drop_step": 3,
+    "action_deviation_step": null
+  },
+  "evidence_trace": [
+    {
+      "step": 1,
+      "value_estimate": 3.2994582653045654,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 46.6574273464049,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 2,
+      "value_estimate": 3.2419309616088867,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 30.533387931983164,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 3,
+      "value_estimate": 0.930117130279541,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 12.95835001780171,
+      "action": 0,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    },
+    {
+      "step": 4,
+      "value_estimate": -2.1512036323547363,
+      "ttc": null,
+      "hazard_visible": true,
+      "hazard_distance": 13.245617843027132,
+      "action": 2,
+      "baseline_action": null,
+      "action_deviation": false,
+      "speed_reward": 1.0
+    }
+  ]
+}
